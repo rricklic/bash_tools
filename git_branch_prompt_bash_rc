@@ -1,0 +1,5 @@
+if [[ $- = *i* ]]
+then
+    GITBRANCH="\$(git branch 2>/dev/null | grep '^*' | colrm 1 2 | awk ' { if ("a$1" == "a") { print \"[\" \$1 \"]\" } }' )"
+    PS1="${GITBRANCH}${USER}@${HOST}> "
+fi
